@@ -44,15 +44,15 @@ function draw() {
  background(0);
  if(keyDown("down")){
   packageSprite=createSprite(width/2, 80, 10,10);
-  packageSprite.addImage(packageIMG)
-  packageSprite.scale=0.2
-  packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:3, isStatic:true});
+  packageSprite.addImage(packageIMG);
+  packageSprite.scale=0.2;
+  packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:3, isStatic:false});
   World.add(world, packageBody);
-  packageSprite.x= packageBody.position.x 
-  packageSprite.y= packageBody.position.y 
-  packageSprite.velocityY=5;
+  packageSprite.x= packageBody.position.x;
+  packageSprite.y= packageBody.position.y;
   packageSprite.collide(groundSprite);
- }
+   
+}
 
  drawSprites(); 
 }
